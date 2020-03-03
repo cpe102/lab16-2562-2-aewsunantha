@@ -13,12 +13,36 @@ int main(){
 	vector<int> x = randomVector(5);
 	vector<int> y = randomVector(5);
 	int z = dotProduct(x,y);
+	cout<< "[";
 	showVector(x);
-	cout << " . ";
+	cout << "] . [";
 	showVector(y);
+	cout<<"]";
 	cout << " = " << z;
 	
 	return 0;
 }
 
 //Write Definition of randomVector() showVector() and dotProduct() here
+vector<int> randomVector(int N){
+	vector<int> out(N);
+	for(int i=0; i<N; i++){
+		out[i]=rand()%10;
+	}return out;
+
+}
+void showVector(vector<int> A){
+
+   for(int i=0; i<A.size(); i++){
+   cout<< A[i]<<" ";
+
+   }
+}
+int dotProduct(vector<int> x,vector<int> y){
+   int sum=0;
+   for(int i=0; i <x.size(); i++){
+	   
+		sum+=x[i]*y[i];
+
+   }return sum;
+   }
